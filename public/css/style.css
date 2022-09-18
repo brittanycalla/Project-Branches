@@ -1,85 +1,93 @@
-/******************************************
-/* COLOR VALUES
-/*******************************************
-warning: rgb(241, 71, 37)
-warning - delete button: rgb(241, 71, 37, .7)
-warning - dashboard card: rgb(241, 71, 37, .3)
+/************************************
+ STYLES
+************************************/
+/* Main Styles */
 
-complete - icon: rgb(143, 209, 79)
-complete - button and dashboard card: rgb(206, 231, 65, .3)
-alert: rgb(181, 143, 0)
-alert - dashboard card: rgb(247, 211, 83, .3)
-
-neutral: rgb(45, 155, 240)
-neutral - dashboard card: rgb(45 155 240, .1)
-*/
-
-/* LAYOUT - ALL VIEWS */
-/* .wrapper {
-  max-width: 90vw;
-  margin: 0 auto;
-} */
-
-.container {
-  min-height: 100vh;
-}
-
-body>main {
-  padding-top: .5rem;
-}
-
-.input-header {
-  display: flex;
-  align-items: flex-end;
-}
-
-.input-header {
-  display: flex;
-  align-items: flex-end;
-}
-  
- /* LAYOUT - HOMEPAGE MOBILE FIRST */
-.homepage h1 {
-  font-size: 18vw;
-}
-  
-.homepage .flex-container {
-  flex-direction: column;
-  justify-content: center;
-}
-  
-.homepage img {
-    width:100%
-}
-
-.homepage h3 {
-  margin: 5% 0 2% 0;
-}
-  
-/* What is this doing? - brittany */
-html, body {
-  height: 100%;
-  width: 100%;
-}
-  
-h1, h2, h3, h4, h5, h6, p {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-  
-h1, .header {
-  font-size: 7rem;
+h1 {
+  font-size: 17vmin;
+  line-height: 17vmin;
   text-align: center;
-  font-style: bold;
   margin-bottom: 1rem;
 }
-  
-h3 {
-    font-weight: 300;
+
+h1, h2, #logo {
+  font-family: degular,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h2 {
+  font-size: 10vmin;
+  line-height: 10vmin;
+}
+
+h3, h4 {
+  margin-bottom: .5rem;
+}
+
+h3, h4, h5, h6, p {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a {
   text-decoration: underline;
 }
+
+a[role=button]{
+  width: 100%;
+}
+
+a[href="/dashboard"] {
+  margin-bottom: var(--spacing);
+}
+
+body>main {
+  /* padding: 5vmin 0; */
+  flex: 1 0 auto;
+}
+
+.flex-container {
+  flex-direction: column;
+}
+  
+/* LAYOUT - HOMEPAGE MOBILE FIRST */
+
+.homepage .flex-container {
+  justify-content: center;
+}
+  
+.homepage img {
+  width:100%
+}
+
+.homepage h3 {
+  margin: 5% 0 2% 0;
+}
+
+.homepage a {
+  width: 100%;
+}
+
+.input-header {
+  flex-direction: row;
+}
+
+#guestAccount {
+  display: inline-block;
+  padding-top: 3vmin;
+}
+  
+/* What is this doing? - brittany */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 .link-to-project{
   width: 100%;
@@ -106,13 +114,10 @@ header a {
   text-decoration: none;
 }
 
-#projectIDblind{
-  display: none;
-}
-
 #logo {
   font-size: 8vmin;
   font-weight: 600;
+  margin-bottom: 0;
 }
 
 /* FONT AWESOME ICONS */
@@ -167,36 +172,17 @@ header a {
   .member{
   list-style-type: none;
   }
-
-  #individual-project-data{
-      min-height: 50%;
-    }
-  
-  #individual-project-buttons{
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 2%;
-  }
-  
-  #mark-complete-button, 
-  #delete-project-button, 
-  #back-to-projects {
-  width: 25%;
-  margin: 2%;
-  height: 30%;
-  }
   
   #delete-project-button{
-  background-color: black;
-  color: rgb(241, 71, 37, .7);
-  border-color: rgb(241, 71, 37, .7);
+  background-color: #F67D66;
+  border-color: #F67D66;
   
   }
   
   #delete-project-button:hover{
   background-color: rgb(241, 71, 37, .7);
+  border-color: rgb(241, 71, 37, .7);
   color: white;
-  border-color: white;
   }
 
   
@@ -204,10 +190,11 @@ header a {
   background-color: #F0F8C5;
   border-color: #F0F8C5;
   color: #000;
+  margin-top: 2rem;
   }
   
   #mark-complete-button:hover{
-  background-color: #F0F8C5;
+  background-color: rgb(206, 231, 65, .3);
   border-color: rgb(206, 231, 65, .3);
   color: #000;
   }
@@ -221,37 +208,14 @@ header a {
     vertical-align: middle;
     padding-left: .6rem;
     font-size: 1.25rem;
-  }
-
-  #back-to-projects:hover{
-  background-color: white;
-  color: black;
-  border-color: black;
-  }
+  }                                             
   
-  /* MOBILE VIEW */
-  @media screen and (max-width: 480px) {
-  
-  /*   INDIVIDUAL PROJECT VIEW */
-  #mark-complete-button, 
-  #delete-project-button, 
-  #back-to-projects {
-    width: 96%;
-    margin: 2%;
-  }
-  #team-members{
-    flex-wrap: no-wrap;
-  }
-  
-  }
-                                                
-  
-  .partialHeader{
+  /* .partialHeader{
     margin: 0;
     padding: 0;
-  }
+  } */
   
-  .signUpForm {
+  /* .signUpForm {
   margin: 0 auto;
   }
   
@@ -262,22 +226,19 @@ header a {
   
   .alignCenter {
   text-align: center;
-  }
+  } */
 
-footer {
+body>footer {
   /* background-color: var(--contrast); */
   color: var(--contrast);
   font-family: 'Source Code Pro', monospace;
   font-size: .8rem;
   text-align: right;
+  padding: 1rem 1.5rem;
 }
 
 footer>span>a {
   color: var(--contrast)
-}
-
-body>footer{
-  padding: 1rem 1.5rem;
 }
 
   .alignRight {

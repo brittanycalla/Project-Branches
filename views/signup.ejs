@@ -2,16 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Branches Sign Up</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"           
-  rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <%- include('partials/head') %>
   <title>Branches Sign Up</title>
 </head>
 
@@ -36,7 +27,7 @@
       <input type="password" name="password">
       <button type="submit" class='contrast'>Sign Up</button>
     </form>
-    <button class="contrast outline" onclick="location.href='/';">Back to Login</button>
+    <a href="/" role="button" class="contrast outline">Back to Login</a>
   </section>
   
 <%- include('partials/footer') %>

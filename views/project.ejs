@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Branches Project - <%= projectData.name %></title>
-        
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-        <link rel='stylesheet' href='/css/style.css'>
-        <script src="https://kit.fontawesome.com/5160746515.js" crossorigin="anonymous"></script>
-
+      <%- include('partials/head') %>
+      <title>Project Details</title>
     </head>    
     <body>
 
         <%- include('partials/header') %>
 
-      <section id='individual-project-data' class='container'>
-        <h2><%= projectData.title %></h2>
-        <h3><%= projectData.dueDate %></h3>
-        <h4 id="projectIDblind"><%= projectData._id %></h4>
-        <ul id="team-members">
- 
-        </ul>
-        <h4>Description</h4>
-        <span class='projectDesc'><%= projectData.description %></span>
-
-      </section>
+      <main class='container flex-container'>
+        <div>
+          <h2><%= projectData.title %></h2>
+          <h3>Deadline: <%= projectData.dueDate.toLocaleDateString([], { year: 'numeric' , month: 'long' , day: '2-digit', timeZone:'UTC'}) %></h3>
+          <h4>Team Members: <%= projectData.teamMembers %></h4>
+          <h4>Description:</h4>
+          <p><%= projectData.description %></p>
+        </div>
       
-      <section id='individual-project-buttons' class='container'>
-          <button id='mark-complete-button' class='primary'>
+        <div data-id='<%=projectData._id%>'>
+          <button id='mark-complete-button'>
             Mark Complete<i class="fas fa-check-circle"></i>
           </button>
           <a href='/dashboard' role='button' class='contrast outline' id='back-to-projects'>Back to Projects</a>
           <button id='delete-project-button' class='delete-project'>
             Delete Project<i class="fa-sharp fa-solid fa-xmark"></i>
           </button> 
+        </div>
       
-      </section>
+      </main>
 
       <%- include('partials/footer') %>
       <script src='/js/project.js'></script>

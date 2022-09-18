@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Branches Add Project</title>
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <%- include('partials/head') %>
+  <title>Add a Project</title>
 </head>
 
 <body>
@@ -15,21 +10,21 @@
   <%- include('partials/header') %>
 
   <main class="container">
-      <h2>Add Project <img src="/assets/addProject-lightbulb.png" alt="lamp" class ="signup-img" width="100" height="100"></h2><h4 class="fas fa-check-circle"></h4>
+      <h2>Add Project <img src="/assets/addProject-lightbulb.png" alt="lamp" class ="signup-img" width="100" height="100"></h2>
       <form action="/projects/addProject" method="POST">
         <label for="title">
           Title
-          <input type="text" id="title" name="title" placeholder="Project Title" required>
+          <input type="text" id="title" name="title" placeholder="What do you want to call this thing?" required>
         </label>
 
         <label for="dueDate">
-          Due Date
-          <input type="date" id="dueDate" name="dueDate">
+          Deadline
+        <input type="date" id="dueDate" name="dueDate" required>
         </label>
 
          <label for="teamMembers">
           Team Members
-          <input type="text" id="teamMembers" name="teamMembers" placeholder="Team Members" required>
+          <input type="text" id="teamMembers" name="teamMembers" placeholder="Are you working on this with anyone?">
           </label>
 
           <!--<details role="list">
@@ -64,7 +59,7 @@
 
         <button type="submit" class="contrast">+ Add Project</button>
       </form>
-      <button type="" onclick="location.href='/dashboard';" class="contrast outline">← Back to Projects</button>
+      <a href="/projects" role="button" class="contrast outline">← Back to Projects</a>
   </main>
   <!-- Footer -->
   <%- include('partials/footer') %>

@@ -8,7 +8,7 @@ deleteBtn.addEventListener('click', deleteProject)
 projectComplete.addEventListener('click', markComplete)
 
 async function deleteProject(){
-    const projectId = document.getElementById('projectIDblind').innerText
+    const projectId = this.parentNode.dataset.id
     try {
         const response = await fetch('delete', {
             method: 'delete',
@@ -26,7 +26,7 @@ async function deleteProject(){
 }
 
 async function markComplete(){
-    const projectId = document.getElementById('projectIDblind').innerText
+    const projectId = this.parentNode.dataset.id
     try{
         const response = await fetch('markComplete', {
             method: 'put',

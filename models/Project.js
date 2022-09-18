@@ -29,7 +29,7 @@ const ProjectSchema = new mongoose.Schema({
   },
   teamMembers: {
     type: String,
-    required: true,
+    required: false,
   }
 })
 
