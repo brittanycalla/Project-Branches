@@ -1,9 +1,9 @@
 # branches ✎
-**branches** is full-stack web app for keeping track of your projects. Projects are sorted and color coded by due date to help users prioritze pressing deadlines. 
+**branches** is a web app for keeping track of your projects. Projects are sorted and color coded by due date to help users prioritze pressing deadlines. 
 
 ![A screen recording demo of branches web app](https://drive.google.com/uc?export=view&id=1E6iqR2rP5wcYlZ2aA0bCkddmvOSOdoXa) 
 
-**Try it out:** https://branches.cyclic.app/
+**Try it out:** https://branches.cyclic.app
 
 ## How It's Made:
 
